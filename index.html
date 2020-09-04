@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <title>Inspire</title>
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('clock').innerHTML =
+          h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+</head>
+
+<body onload="startTime()">
+ <main class="container-fluid bg-dark" id="bg-img">
+
+    <div id="app">
+        <div class="row" name ="weather">
+            <div class="col d-flex justify-content-end" id="weather"></div>
+        </div>
+        <div class="row" name ="clock">
+            <div class="col container h1" id="clock"></div>
+        </div>
+        <div class="row" name="quotes and todo list">
+            <div class="offset-4 col-4"  id="quote">
+                <!-- <div class="text-light shadow">
+                    <p>quote goes here</p>
+                </div> -->
+            </div>
+            <div class="col-4" name="To Do List">
+                <div class="col mb-3 mx-1">
+                    <div class="card" style="width: 20rem;">
+                    <h4 class="card-header d-flex justify-content-between">To-Do</h4>
+                    <ul class="list-group" id="listItems">
+                      
+                    </ul>
+                      <form onsubmit="app.TodoController.addTodo(e)">
+                        <input type="text" class="form-control" placeholder="Add list item + Enter" name="listItemInput" required >
+                      </form>
+                    </div>
+                  </div>
+
+                <!-- <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h6 class="card-title">To Do:</h6>
+                    </div>
+                     <ul class="list-group list-group-flush" id="todo">
+                        <li class="list-group-item d-flex justify-content-between darker-bg no-select"> 
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="id">
+                                <label class="custom-control-label" for="id" >description of task</label>
+                            </div>
+                            <span> <i class="fa fa-times-circle-o" aria-hidden="true"></i> </span>
+                          </li> 
+                    </ul> 
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    </main>
+    <footer class="container-fluid bg-transparent">
+    </footer>
+    <script src='https://kit.fontawesome.com/d2e00f75e8.js' crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+        integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+        crossorigin="anonymous"></script>
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
