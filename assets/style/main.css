@@ -42,10 +42,17 @@
   box-sizing: border-box;
 }
 
+* {
+  outline: 1px solid red
+}
 /* MY CUSTOM CSS UTILITIES */
 
 .text-shadow {
   text-shadow: 2px 2px 2px #464646;
+}
+
+.bmt-1 {
+  margin-top: 20vh;
 }
 
 /* END CUSTOM CSS UTILITIES */
