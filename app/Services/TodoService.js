@@ -9,7 +9,6 @@ let url = 'matthewhufft/todos/'
 class TodoService {
   async getTodos() {
     //TODO Handle this response from the server
-    console.log("Getting the Todo List");
     let res = await api.get(url);
     ProxyState.todos = res.data.data.map(t => new Todo(t))
     console.log(ProxyState.todos)
@@ -20,10 +19,11 @@ class TodoService {
     let res = await api.post(url, todo);
     ProxyState.todos = [...ProxyState.todos, new Todo(res.data.data)]
     console.log(ProxyState.todos)
-  }
+  } 
 
   async toggleTodoStatus(todoId) {
     let todo = await ProxyState.todos.find(todo => todo.id == todoId);
+    console.log("found todo")
     //TODO Make sure that you found a todo,
     //		and if you did find one
     //		change its completed status to whatever it is not (ex: false => true or true => false)

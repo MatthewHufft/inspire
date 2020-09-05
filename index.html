@@ -16,8 +16,8 @@
           m = checkTime(m);
           s = checkTime(s);
           document.getElementById('clock').innerHTML = `
-            <div class="card bg-transparent" style="width: 25rem; height: 10rem;">
-                <div class="card-body m-auto text-light text-shadow">
+            <div class="trans-container" style="width: 25rem; height: 10rem;">
+                <div class="card-body m-auto">
                     <p>${h}:${m}:${s}</p>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             </div>
 
         </div>
-        <div class="row bmt-1" style="height: 28vh;" name="quotes and todo list">
+        <div class="row bmt-1" style="height: 25vh;" name="quotes and todo list">
             <div class="offset-4 col-4 d-flex align-items-end"  id="quote">
                 <!-- <div class="text-light shadow">
                     <p>quote goes here</p>
@@ -83,6 +83,9 @@
     </main>
     <footer class="container-fluid bg-transparent">
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/d2e00f75e8.js' crossorigin='anonymous'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
         integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="

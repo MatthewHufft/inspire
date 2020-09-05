@@ -31,7 +31,7 @@ export default class Weather {
     if(this.isFahrenheit) {
       return `
         <div class="style="width: 18rem;">
-          <div class="weather-container rounded px-3 py-1" onclick="app.weatherController.changeTempType('${this.isFahrenheit}')">
+          <div class="trans-container rounded px-3 py-1" onclick="app.weatherController.changeTempType('${this.isFahrenheit}')">
             <p class="card-title font-size-40">${this.fahrenheit}°F</p>
             <p class="card-title mb-2 font-size-40">${this.city}</p>
           </div>
@@ -39,7 +39,7 @@ export default class Weather {
     } else {
       return `
         <div class="style="width: 18rem;">
-          <div class="weather-container rounded px-3 py-1" onclick="app.weatherController.changeTempType(${this.isFahrenheit})">
+          <div class="trans-container rounded px-3 py-1" onclick="app.weatherController.changeTempType(${this.isFahrenheit})">
             <p class="card-title font-size-40">${this.celcius}°C</p>
             <p class="card-title mb-2 font-size-40">${this.city}</p>
           </div>
