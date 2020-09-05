@@ -3,6 +3,15 @@ import Weather from "../Models/Weather.js";
 import { api } from "./AxiosService.js";
 
 class WeatherService {
+  changeTempType(value) {
+    let weather = ProxyState.weather
+    if(value){
+      weather.isFahrenheit = false
+    } else {
+      weather.isFahrenheit = true
+    }
+    ProxyState.weather = ProxyState.weather
+  }
   async getWeather() {
     console.log("Calling the Weatherman");
     let res = await api.get('weather');

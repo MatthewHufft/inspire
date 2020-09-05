@@ -1,6 +1,5 @@
 import { ProxyState } from "../AppState.js";
 import weatherService from "../Services/WeatherService.js";
-import weather from "../models/weather.js"
 
 //NOTE The weather service and controller are mostly done,
 //		you may wish to check out the model and include some additional data.
@@ -23,6 +22,14 @@ export default class WeatherController {
     }
     catch (e) {
       console.error(e)
+    }
+  }
+
+  changeTempType(value) {
+    try {
+      weatherService.changeTempType(value)
+    } catch(e) {
+      console.error(e);
     }
   }
 }
