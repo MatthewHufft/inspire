@@ -9,7 +9,7 @@ export default class Todo {
 
   get Template () {
     return `
-      <li class="list-group-item d-flex justify-content-between darker-bg no-select"> 
+      <li class="d-flex justify-content-between my-1 mx-1 darker-bg no-select"> 
         <div class="custom-control custom-checkbox" onclick="app.todoController.toggleTodoStatus(${this.id})">
           <input type="checkbox" class="custom-control-input" id="${this.id}"  ${this.completed}>
           <label class="custom-control-label" for="${this.id}">${this.description}</label>
