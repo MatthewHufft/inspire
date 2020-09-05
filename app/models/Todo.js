@@ -1,6 +1,6 @@
 export default class Todo {
-  constructor({ id, completed, user, description }) {
-    this.id = id || "";
+  constructor({ id, completed, user, description, _id }) {
+    this.id = id || _id;
     this.completed = completed
     this.user = user
     this.description = description || "no description"
@@ -13,7 +13,7 @@ export default class Todo {
           <input type="checkbox" class="custom-control-input" id="${this.id}">
           <label class="custom-control-label" for="${this.id}">${this.description}</label>
         </div>
-        <span> <i class="fa fa-times-circle-o" aria-hidden="true"></i> </span>
+        <span> <i class="fa fa-times-circle-o" aria-hidden="true" onclick="app.todoController.removeTodo('${this.id}')"></i> </span>
       </li> `
   }
 }
