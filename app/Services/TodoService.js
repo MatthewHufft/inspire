@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { api } from "../Services/AxiosService.js";
+import Todo from "../Models/Todo.js";
 
 // TODO you will need to change 'YOURNAME' to your actual name or all requests will be rejected
 let url = 'matthewhufft/todos/'
@@ -7,14 +8,18 @@ let url = 'matthewhufft/todos/'
 
 class TodoService {
   async getTodos() {
+    //TODO Handle this response from the server
     console.log("Getting the Todo List");
     let res = await api.get(url);
-    //TODO Handle this response from the server
+    ProxyState.todos = res.data.data.map(t => new Todo(t))
+    console.log(ProxyState.todos)
   }
-
+  
   async addTodo(todo) {
-    let res = await api.post(url, todo);
     //TODO Handle this response from the server
+    let res = await api.post(url, todo);
+    ProxyState.todos = [...ProxyState.todos, new Todo(res.data.data)]
+    console.log(ProxyState.todos)
   }
 
   async toggleTodoStatus(todoId) {
