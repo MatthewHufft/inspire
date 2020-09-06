@@ -1,4 +1,4 @@
-import Todo from "./Models/Todo.js"
+import Todo from "./models/Todo.js"
 import Weather from "./models/Weather.js"
 import Image from "./models/Image.js"
 import Quote from "./models/Quote.js"

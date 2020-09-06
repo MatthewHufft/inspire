@@ -16,7 +16,7 @@ export default class Weather {
     this.kelvin = data.main.temp
     this.fahrenheit = convertFahrenheit(this.kelvin)
     this.celcius = convertCelcius(this.kelvin)
-    this.isFahrenheit = false;
+    this.isFahrenheit = true;
     this.icon = data.weather[0].icon 
   }
 
