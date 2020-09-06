@@ -12,7 +12,6 @@ function _drawTodos() {
 
 export default class TodoController {
   constructor() {
-    //TODO Remember to register your subscribers
     ProxyState.on("todos", _drawTodos)
     todoService.getTodos();
   }
@@ -24,7 +23,7 @@ export default class TodoController {
       console.error(error)
     }
   }
-  //TODO build the todo object from the data that comes into this method
+  //NOTE build the todo object from the data that comes into this method
   addTodo(event) {
     event.preventDefault();
     var form = event.target;
@@ -59,7 +58,6 @@ export default class TodoController {
    * @param {string} todoId 
    */
   removeTodo(todoId) {
-    console.log("remove controller working")
     try {
       todoService.removeTodo(todoId);
     } catch (error) {

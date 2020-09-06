@@ -47,6 +47,54 @@
 } */
 /* MY CUSTOM CSS UTILITIES */
 
+
+/* Tooltip container */
+.myToolTip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* myToolTip text */
+.myToolTip .myToolTiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(255, 255, 255, 0.548);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the myToolTip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in myToolTip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* myToolTip arrow */
+.myToolTip .myToolTiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.548) transparent transparent transparent;
+}
+
+/* Show the myToolTip text when you mouse over the myToolTip container */
+.myToolTip:hover .myToolTiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 .scroll {
   max-height: 12vh;
   overflow-y: scroll;
