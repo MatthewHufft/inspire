@@ -9,13 +9,13 @@ class TodoService {
   async getTodos() {
     let res = await api.get(url);
     ProxyState.todos = res.data.data.map(t => new Todo(t))
-    console.log(ProxyState.todos)
   }
   
   async addTodo(todo) {
     let res = await api.post(url, todo);
     ProxyState.todos = [...ProxyState.todos, new Todo(res.data.data)]
-    console.log(ProxyState.todos)
+    // @ts-ignore
+    document.getElementById("toDoForm").reset()
   } 
 
   async toggleTodoStatus(todoId) {
