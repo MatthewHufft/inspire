@@ -16,8 +16,8 @@
           m = checkTime(m);
           s = checkTime(s);
           document.getElementById('clock').innerHTML = `
-            <div class="trans-container rounded" style="width: 20rem;;">
-                <div class="card-body m-auto">
+            <div class="trans-container rounded" style="width: 25rem;">
+                <div class="card-body m-auto text-center">
                     <p>${h}:${m}:${s}</p>
                     <div class="card-subtitle"><h4>Good afternoon, Matt!</h4></div>
                 </div>
@@ -51,17 +51,18 @@
                 </div> -->
             </div>
             <div class="col-4 d-flex justify-content-center" name="To Do List">
-                <div class="card d-flex">
-                    <div class="card trans-container" style="width: 20rem;">
-                    <h4 class="card-header d-flex justify-content-between">To-Do</h4>
-                    <ul class="list-group scroll" id="listItems">
-                      
-                    </ul>
+
+                
+                  <div class=" trans-container rounded" style="width: 25rem;">
+                      <h4 class="card-header d-flex justify-content-between" id="toDoHeader">3 things on your agenda </h4>
+                      <ul class="list-group scroll" id="listItems">
+                        
+                      </ul>
                       <form onsubmit="app.todoController.addTodo(event)">
                         <input type="text" class="form-control" placeholder="Add list item + Enter" name="description" required>
                       </form>
                     </div>
-                  </div>
+                  
 
                 <!-- <div class="card" style="width: 18rem;">
                     <div class="card-body">

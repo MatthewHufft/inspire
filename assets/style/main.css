@@ -45,6 +45,8 @@
 /* * {
   outline: 1px solid red
 } */
+
+
 /* MY CUSTOM CSS UTILITIES */
 
 
@@ -52,6 +54,10 @@
 .myToolTip {
   position: relative;
   display: inline-block;
+}
+
+.line-through {
+  text-decoration: line-through var(--success);
 }
 
 /* myToolTip text */
