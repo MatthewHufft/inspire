@@ -10,7 +10,7 @@
     <script>
         function startTime() {
           var today = new Date();
-          var h = today.getHours() % 12;
+          var h = today.getHours();
           var m = today.getMinutes();
           var s = today.getSeconds();
           m = checkTime(m);
@@ -18,8 +18,8 @@
           document.getElementById('clock').innerHTML = `
             <div class="trans-container rounded" style="width: 25rem;">
                 <div class="card-body m-auto text-center">
-                    <p>${h}:${m}:${s}</p>
-                    <div class="card-subtitle"><h4>Good afternoon, Matt!</h4></div>
+                    <p>${h}:${m}</p>
+                    <div class="card-subtitle"><h4>Hello there, _________________</h4></div>
                 </div>
             </div>
           `;

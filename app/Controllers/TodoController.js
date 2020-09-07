@@ -6,14 +6,31 @@ function _drawTodos() {
   let todos = ProxyState.todos
   todos.forEach(t => template += t.Template)
   document.getElementById('listItems').innerHTML = template
+  _getItemCount()
  }
 
+function _getItemCount(){
+   let todos = ProxyState.todos
+   let count = todos.length
+   for (let i = 0; i < todos.length; i++) {
+     const todo = todos[i];
+     if(todo.completed == true){
+       count--
+     }
+   }
+   if(count >= 1){
+     document.getElementById('toDoHeader').innerHTML = `${count} things on your agenda`
+   } else if (count == 0){
+     document.getElementById('toDoHeader').innerHTML = `You've finished all your tasks!`
+   }
+ }
 
 export default class TodoController {
   constructor() {
     ProxyState.on("todos", _drawTodos)
     todoService.getTodos();
   }
+
 
   getTodos() {
     try {

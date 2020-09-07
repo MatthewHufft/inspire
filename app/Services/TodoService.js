@@ -6,6 +6,7 @@ let url = 'matthewhufft/todos/'
 
 
 class TodoService {
+  
   async getTodos() {
     let res = await api.get(url);
     ProxyState.todos = res.data.data.map(t => new Todo(t))
