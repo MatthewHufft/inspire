@@ -23,7 +23,7 @@ export default class Weather {
   get Template() {
     if(this.isFahrenheit) {
       return `
-        <div class="style="width: 18rem;">
+        <div class="style="width: 18rem;" role="button">
           <div class="trans-container rounded px-3 py-1" onclick="app.weatherController.changeTempType('${this.isFahrenheit}')">
             <p class="card-title font-size-40">${this.fahrenheit}°F</p>
             <p class="card-title mb-2 font-size-40">${this.city}</p>
@@ -31,7 +31,7 @@ export default class Weather {
         </div> `
     } else {
       return `
-        <div class="style="width: 18rem;">
+        <div class="style="width: 18rem;" role="button">
           <div class="trans-container rounded px-3 py-1" onclick="app.weatherController.changeTempType(${this.isFahrenheit})">
             <p class="card-title font-size-40">${this.celcius}°C</p>
             <p class="card-title mb-2 font-size-40">${this.city}</p>
