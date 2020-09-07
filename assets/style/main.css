@@ -56,8 +56,20 @@
   display: inline-block;
 }
 
-.line-through {
-  text-decoration: line-through var(--success);
+.line-through{
+  font-size: 1em;
+  position: relative;
+}
+
+  .line-through::after {
+    border-bottom: 0.225em solid rgba(255, 0, 0, 0.5);
+    content: "";
+    left: 0;
+    line-height: 1em;
+    margin-top: calc(0.125em / 2 * -1);
+    position: absolute;
+    right: 0;
+    top: 50%;
 }
 
 /* myToolTip text */
